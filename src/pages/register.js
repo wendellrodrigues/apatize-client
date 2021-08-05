@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { colors } from "../components/styles/ColorStyles"
 
-export default function Index() {
+export default function Register() {
   return (
     <Layout>
       <Wrapper colors={colors}></Wrapper>
