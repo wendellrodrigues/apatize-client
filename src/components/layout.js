@@ -14,7 +14,22 @@ import Hamburger from "./buttons/Hamburger"
 import { useOnClickOutside } from "../helpers/hooks"
 
 function Layout({ children }) {
-  const [state, setState] = useState("Login")
+  //The useState is refreshing on every page load
+
+  //Get Page State
+  const pageWindow = window.location.pathname
+  let page = "Login"
+
+  if (pageWindow == "/login") {
+    page = "Login"
+  } else if (pageWindow == "/register") {
+    page = "Register"
+  } else if (pageWindow == "/") {
+    page = "About"
+  }
+
+  const [state, setState] = useState(page)
+
   const [open, setOpen] = useState(false)
 
   const node = useRef()

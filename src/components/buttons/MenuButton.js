@@ -9,19 +9,16 @@ import { MenuText } from "../styles/TextStyles"
 export default function MenuButton(props) {
   const { state, item, open } = props
 
-  console.log(`Open from menu button: ${open}`)
+  const changeState = () => {
+    props.changeState(item.title)
+    //props.history.push(state)
+  }
 
   //Handle Anchor Link
   if (item.title == "About") {
     return (
-      <AnchorLink to={item.link}>
-        <MenuItem
-          title={item.title}
-          onClick={() => {
-            props.changeState(item.title)
-          }}
-          open={open}
-        >
+      <AnchorLink onClick={changeState} to={"/#about"}>
+        <MenuItem open={open}>
           <MenuTitle>{item.title}</MenuTitle>
           <MenuLine title={item.title} state={state} />
         </MenuItem>
@@ -31,13 +28,7 @@ export default function MenuButton(props) {
 
   return (
     <Link to={item.link}>
-      <MenuItem
-        title={item.title}
-        onClick={() => {
-          props.changeState(item.title)
-        }}
-        open={open}
-      >
+      <MenuItem open={open} onClick={changeState}>
         <MenuTitle>{item.title}</MenuTitle>
         <MenuLine title={item.title} state={state} />
       </MenuItem>
@@ -51,9 +42,9 @@ const MenuItem = styled.div`
   padding: 10px;
   transition: 0.5s ease-out;
   text-decoration: none;
-  @media (max-width: 760px) {
+  /* @media (max-width: 760px) {
     display: ${({ open }) => (open ? "grid" : "none")};
-  }
+  } */
   `
 
 const MenuTitle = styled(MenuText)`

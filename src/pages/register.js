@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import { colors } from "../components/styles/ColorStyles"
 
 export default function Register() {
+  const [state, setState] = useState("Register")
   return (
     <Layout>
       <Wrapper colors={colors}></Wrapper>

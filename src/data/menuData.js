@@ -2,7 +2,7 @@ export const menuData = [
   {
     title: "About",
     icon: "",
-    link: "/#",
+    link: "/#about",
   },
   {
     title: "Login",

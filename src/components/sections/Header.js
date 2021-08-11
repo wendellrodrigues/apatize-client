@@ -23,10 +23,6 @@ export default function Header(props) {
           />
         ))}
       </MenuWrapper>
-      {/* <HamburgerButton
-        onClick={() => setOpen(!open)}
-        src="/icons/hamburger_menu.svg"
-      /> */}
     </Wrapper>
   )
 }
